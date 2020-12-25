@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="data:,">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <form id="myForm" action="http://localHost:9999/localhost:1234" method="get">
+            <label for="a">a:</label><br>
+            <input type="text" id="a" name="a"><br>
+            <p id="aResult"></p><br>
+            <label for="b">b:</label><br>
+            <input type="text" id="b" name="b"><br>
+            <p id="bResult"></p><br>
+            <input type="submit" value="Add 1 to each and show">
+        </form>
+
+        <script type="text/javascript">
+            var frm = $('#myForm');
+
+            frm.submit(function (e) {
+
+                e.preventDefault();
+
+                $.ajax({
+                    type: frm.attr('method'),
+                    url: frm.attr('action'),
+                    data: frm.serialize(),
+                    crossDomain: true,
+                    success: function (data) {
+                        console.log('Submission was successful.');
+                        console.log(data);
+
+                        $('#aResult').text(data.a)
+                        $('#bResult').text(data.b)
+
+                    },
+                    error: function (data) {
+                        console.log('An error occurred.');
+                        console.log(data);
+                    },
+                });
+            });
+        </script>
+    </div>
+
+</body>
+
+</html>

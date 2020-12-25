@@ -1,0 +1,26 @@
+{
+  "name": "iot-final-exam-fall-2020-1b-request",
+  "version": "1.0.0",
+  "description": "Solution to IoT Final Exam fall 2020 1b using request",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeremyDsilva/IoT-Final-Exam-Fall-2020.git"
+  },
+  "author": "Jeremy Dsilva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JeremyDsilva/IoT-Final-Exam-Fall-2020/issues"
+  },
+  "homepage": "https://github.com/JeremyDsilva/IoT-Final-Exam-Fall-2020#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.8",
+    "request": "^2.88.2",
+    "serve-favicon": "^2.5.0"
+  }
+}
